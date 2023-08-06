@@ -60,13 +60,13 @@ habit-tracker-app/
 
 ## Screenshots
 1. Week View
-[Week View][assets/images/img1.png]
+![Week View][assets/images/img1.png]
 
 2. Add Task
-[Week View][assets/images/img2.png]
+![Week View][assets/images/img2.png]
 
 3. Daily View
-[Daily View][assets/images/img3.png]
+![Daily View][assets/images/img3.png]
 
 ## Demo Video
 You can watch the demo video of the Habit Tracker app on YouTube: [Link to the Demo Video]()
