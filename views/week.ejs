@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/css/week.css">
+
+
+<div class="container">
+    <h1> Weekly View </h1>
+    <div class="container week">
+       
+        <br>
+    
+        <% daysOfWeek.forEach((day) => { %>
+            <a href="/details/day:<%= day%>">
+                <div id="<%= day%>" class="days card">
+                    <%= day%>
+                </div>
+            </a>
+        <% }) %>
+    </div>
+</div>
+
+
+

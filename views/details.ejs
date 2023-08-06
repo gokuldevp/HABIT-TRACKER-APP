@@ -1,7 +1,21 @@
 
+
 <div class="container">
-    <h1><%= title%></h1>
+    <h1><%= title %></h1>
+
+    <% Habit.forEach((habit) => { %>
+        <form action="/details/update-status" method="post">
+            <input type="hidden" name="habitId" value="<%= habit._id %>">
+            <label for=""><%= habit.name %></label>
+            <label for=""><%= habit.time %></label>
+            <label for="habit">Status: </label>
+            <select id="status" name="status">
+              <option value="None" <%= habitStatus.status === 'None' ? 'selected' : '' %>>None</option>
+              <option value="Not Done" <%= habitStatus.status === 'None' ? 'selected' : '' %>>Not Done</option>
+              <option value="Done" <%= habitStatus.status === 'None' ? 'selected' : '' %>>Done</option>
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+    <% }) %>
 
 </div>
-
-

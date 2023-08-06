@@ -1,0 +1,51 @@
+body{
+    text-align: center;
+}
+
+.week {
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: row;
+}
+
+.days{
+    width: 400px;
+    height: 200px;
+    margin: 2px;
+    text-align: center;
+    padding-top: 80px;
+    color: aliceblue;
+}
+
+a {
+    text-decoration: none;
+}
+  
+
+#Sunday {
+    background-color: red;
+}
+
+#Monday{
+    background-color: orange;
+}
+
+#Tuesday{
+    background-color: yellow;
+}
+
+#Wednesday {
+    background-color: green;
+}
+
+#Thursday {
+    background-color: blue;
+}
+
+#Friday {
+    background-color: violet;
+}
+
+#Saturday {
+    background-color: indigo;
+}
