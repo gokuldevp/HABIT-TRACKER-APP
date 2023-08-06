@@ -1,18 +1,26 @@
+<!-- Link to the external stylesheet 'addHabit.css' -->
 <link rel="stylesheet" href="/css/addHabit.css">
 
-
+<!-- The container for the add habit form -->
 <div class="container mt-5">
+    <!-- Display the title of the page, dynamically generated using the 'title' variable -->
     <h1><%= title %></h1>
 
+    <!-- Form to add a new habit, submitting data to '/details/create-habit' endpoint with the POST method -->
     <form action="/details/create-habit" method="post" class="mt-4">
-      <div class="mb-3">
-        <label for="name" class="form-label">Habit Name</label>
-        <input type="text" name="name" id="name" class="form-control" required>
-      </div>
-      <div class="mb-3">
-        <label for="time" class="form-label">Time</label>
-        <input type="time" name="time" id="time" class="form-control" required>
-      </div>
-      <button type="submit" class="btn btn-primary">Add Habit</button>
+        <!-- Input field for the habit name -->
+        <div class="mb-3">
+            <label for="name" class="form-label">Habit Name</label>
+            <input type="text" name="name" id="name" class="form-control" required>
+        </div>
+
+        <!-- Input field for the habit time -->
+        <div class="mb-3">
+            <label for="time" class="form-label">Time</label>
+            <input type="time" name="time" id="time" class="form-control" required>
+        </div>
+
+        <!-- Submit button to add the new habit -->
+        <button type="submit" class="btn btn-primary">Add Habit</button>
     </form>
-  </div>
+</div>

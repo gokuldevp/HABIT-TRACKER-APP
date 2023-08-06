@@ -1,37 +1,53 @@
+<!-- Link to the external stylesheet 'details.css' -->
 <link rel="stylesheet" href="/css/details.css">
 
+<!-- The container for the habit sessions -->
 <div class="container">
+    <!-- Display the title of the page, dynamically generated using the 'title' variable -->
     <h1><%= title %></h1>
 
     <% habitStatus.forEach((habit) => { %>
+    <!-- Loop through each habit session and create a card for it -->
         <div class="card session">
+            <!-- Form to update the status of the habit session -->
             <form class="mb-3" action="/details/update-status" method="post">
+                <!-- Hidden input field to store the habit ID for identifying the session -->
                 <input type="hidden" name="habitId" value="<%= habit._id %>">
+                <!-- Hidden input field to store the date of the habit session -->
                 <input type="hidden" name="date" value="<%= habit.date %>">
+                <!-- Display the habit name and time in separate columns -->
                 <div class="row mb-2">
                     <div class="col-md-6">
+                        <!-- Habit name displayed in an <h3> element -->
                         <h3 for="habitName"><%= habit.name %></h3>
                     </div>
                     <div class="col-md-3">
+                        <!-- Habit time displayed in an <h3> element -->
                         <h3 for="habitTime"><%= habit.time %></h3>
                     </div>
                     <div class="col-md-3">
+                        <!-- Dropdown to select the status of the habit session -->
                         <label for="status">Status:</label>
                         <select class="form-select" id="status" name="status">
+                            <!-- Option for 'None' status, pre-selected if the habit status is 'None' -->
                             <option value="None" <%= habit.status === 'None' ? 'selected' : '' %>>None</option>
+                            <!-- Option for 'Not Done' status, pre-selected if the habit status is 'Not Done' -->
                             <option value="Not Done" <%= habit.status === 'Not Done' ? 'selected' : '' %>>Not Done</option>
+                            <!-- Option for 'Done' status, pre-selected if the habit status is 'Done' -->
                             <option value="Done" <%= habit.status === 'Done' ? 'selected' : '' %>>Done</option>
                         </select>
                     </div>
                 </div>
+                <!-- Row for the submit button -->
                 <div class="row">
                     <div class="col-md-12">
+                        <!-- Submit button to update the habit status -->
                         <input type="submit" class="btn btn-primary" value="Submit">
                     </div>
                 </div>
             </form>
         </div>
         <% }) %>
-        
-
+        <!-- End of the loop for habit sessions -->
 </div>
+<!-- End of the container for the habit sessions -->

@@ -4,12 +4,16 @@
 <div class="container">
     <h1> Weekly View </h1>
     <div class="container week">
-       
-        <br>
     
         <% daysOfWeek.forEach((day) => { %>
             <a href="/details/day:<%= day%>">
                 <div id="<%= day%>" class="days card">
+
+                    <% if (done.includes(day)) { %>
+                        <div class="done card">
+                            <h5 >Complete</h5>
+                        </div>
+                    <% } %>
                     <%= day%>
                 </div>
             </a>

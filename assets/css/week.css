@@ -9,44 +9,25 @@ body{
     flex-direction: row;
 }
 
-.days{
+.days {
     width: 400px;
     height: 200px;
     margin: 2px;
     text-align: center;
-    padding-top: 80px;
-    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: blue;
+    background-color: pink;
 }
+
 
 a {
     text-decoration: none;
+    font-size: larger;
 }
-  
 
-#Sunday {
+.done {
     background-color: red;
-}
-
-#Monday{
-    background-color: orange;
-}
-
-#Tuesday{
-    background-color: yellow;
-}
-
-#Wednesday {
-    background-color: green;
-}
-
-#Thursday {
-    background-color: blue;
-}
-
-#Friday {
-    background-color: violet;
-}
-
-#Saturday {
-    background-color: indigo;
+    color: white;
 }

@@ -1,15 +1,27 @@
+<!-- Link to the external stylesheet 'header.css' -->
 <link rel="stylesheet" href="/css/header.css">
 
+<!-- Container for the navigation bar (navbar) -->
 <div class="navbar navbar-expand-lg container">
+    <!-- Button to toggle the collapsible navigation menu -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- Icon for the navbar toggler button -->
         <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!-- Collapsible navigation menu content -->
     <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- Unordered list (ul) for navigation links -->
         <ul class="navbar-nav">
             <% navLinks.forEach((item) => { %>
+                <!-- List item (li) for each navigation link -->
                 <li class="nav-item">
-                    <a class="nav-link btn btn-secondary" style="margin: 3px;" href="<%= item.link%>"><%= item.itemName%></a>
+                    <!-- Anchor link (a) representing a navigation link with a secondary button style -->
+                    <a class="nav-link btn btn-secondary" style="margin: 3px;" href="<%= item.link %>">
+                        <!-- Display the name of the navigation item (link) -->
+                        <%= item.itemName %>
+                    </a>
                 </li>
             <% }) %>
         </ul>
