@@ -19,7 +19,7 @@ This is a full-stack Habit Tracker app built using Node.js, EJS, and MongoDB. Th
 6. express-ejs-layouts
 
 ## file structure
-
+```
 habit-tracker-app/
 |-- node_modules/
 |-- views/
@@ -56,7 +56,7 @@ habit-tracker-app/
 |-- package-lock.json
 |-- .gitignore
 |-- README.md
-
+```
 
 ## Screenshots
 1. Week View
