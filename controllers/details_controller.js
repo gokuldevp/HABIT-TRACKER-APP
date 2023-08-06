@@ -6,16 +6,16 @@ const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Fri
 
 module.exports.detailsView = async (req, res) => {
     const navlinks = [{itemName:'Add Task',link:'/details/add-habit'},{itemName:'Weekly View',link:'/details/weekly-view'}]
-    const currentDay = req.params['dayName'].slice(1);
+    const date = req.params['dayName'].slice(1);
     
     const habits = await Habit.find({});
-    const habitStatus = await HabitStatus.find({day:currentDay})
+    const habitStatus = await HabitStatus.find({date})
 
     let variables = {
-        title: currentDay + " Habits",
+        title: date + " Habits",
         navLinks: navlinks,
         Habit: habits,
-        habitStatus: habitStatus
+        habitStatus: habitStatus,
     }
     return res.render('details', variables);
 };
@@ -51,12 +51,14 @@ module.exports.createHabit = async (req, res) => {
 
                     daysOfWeek.forEach((day) => {
                     HabitStatus.create({
+                        name: habit.name,
+                        time: habit.time,
                         habit: habit._id,
                         date: day,
                         status: 'None',
                       })
                         .then((habitStatus) => {
-                          console.log(`HabitStatus created for ${day}:`, habitStatus);
+                        //   console.log(`HabitStatus created for ${day}:`, habitStatus);
                         })
                         .catch((error) => {
                           console.error('Error creating HabitStatus:', error);
@@ -81,5 +83,7 @@ module.exports.createHabit = async (req, res) => {
 };
 
 module.exports.updateStatus = async (req, res) => {
-
+    const habitId = req.body.habitId;
+    await HabitStatus.findByIdAndUpdate({ _id: habitId}, {status: req.body.status});
+    res.redirect('back');
 }

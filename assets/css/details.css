@@ -1,0 +1,9 @@
+body{
+    background-color: aqua;
+}
+
+.session {
+    margin: 2px;
+    padding: 5px;
+    background-color: pink;
+}

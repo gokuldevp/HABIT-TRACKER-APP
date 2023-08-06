@@ -12,5 +12,4 @@ router.post('/create-habit', detailsController.createHabit);
 
 router.post('/update-status', detailsController.updateStatus);
 
-
 module.exports = router;
