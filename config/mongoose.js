@@ -1,8 +1,14 @@
 // Importing the Mongoose library to interact with MongoDB
 const mongoose = require('mongoose');
 
+const connectionString = process.env.MONGODB_URI;
+
 // Connecting to the "condial_development" database on the local MongoDB server
-mongoose.connect('mongodb://127.0.0.1/habbit_tracker');
+mongoose.connect(connectionString,  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    // Add any other options you need
+  });
 
 // Creating a connection object "db" that represents the connection to the database
 const db = mongoose.connection;
