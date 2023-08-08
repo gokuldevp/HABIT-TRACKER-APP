@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 // Define the 'habitStatusSchema' to represent the structure of a habit status document in the collection
 const habitStatusSchema = new mongoose.Schema({
     // The 'name' field is of type 'String', required, and must be unique (no duplicate names allowed)
-    name: { type: String, required: true, unique: true },
+    name: { type: String, required: true },
 
     // The 'time' field is of type 'String' and is required
     time: { type: String, required: true },
