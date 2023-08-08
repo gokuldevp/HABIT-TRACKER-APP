@@ -71,3 +71,6 @@ habit-tracker-app/
 
 ## Demo Video
 You can watch the demo video of the Habit Tracker app on YouTube: [Link to the Demo Video](https://youtu.be/5lm6_TP3lQ0)
+
+## Deployment Link
+The App is deployed on Render: [Habit-Tracker-App](https://habit-tracker-app-jmfo.onrender.com/details/day:Wednesday)
